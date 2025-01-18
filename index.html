@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Orbitron&family=Digital-7&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="clock-display">
+            <i class="fas fa-expand fullscreen" onclick="toggleFullscreen()"></i>
+            <div class="time" id="time">00:00:00</div>
+            <div class="date" id="date">Monday, January 1, 2025</div>
+            <div class="stopwatch" id="stopwatch" style="display: none">00:00:00</div>
+            <div class="timer" id="timer" style="display: none">00:00:00</div>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <h3>Display Settings</h3>
+                <button onclick="toggleTimeFormat()">12/24 Hour</button>
+                <button onclick="toggleSeconds()">Show/Hide Seconds</button>
+                <button onclick="toggleDarkMode()">Dark Mode</button>
+                <select id="fontSelect" onchange="changeFont()">
+                    <option value="Orbitron">Orbitron</option>
+                    <option value="Roboto Mono">Roboto Mono</option>
+                    <option value="Digital-7">Digital-7</option>
+                </select>
+                <input type="color" id="textColor" onchange="changeTextColor()" value="#00ff00">
+                <input type="color" id="bgColor" onchange="changeBackground()" value="#000000">
+            </div>
+
+            <div class="control-group">
+                <h3>Timezone</h3>
+                <select id="timezone" class="timezone-select" onchange="changeTimezone()">
+                </select>
+            </div>
+
+            <div class="control-group">
+                <h3>Alarms</h3>
+                <input type="time" id="alarmTime">
+                <select id="alarmSound">
+                    <option value="alarm1">Classic Beep</option>
+                    <option value="alarm2">Digital</option>
+                    <option value="alarm3">Gentle</option>
+                </select>
+                <button onclick="setAlarm()">Set Alarm</button>
+                <div class="alarm-list" id="alarmList"></div>
+            </div>
+
+            <div class="control-group">
+                <h3>Stopwatch & Timer</h3>
+                <button onclick="toggleStopwatch()">Stopwatch</button>
+                <button onclick="toggleTimer()">Timer</button>
+                <button onclick="resetAll()">Reset All</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
