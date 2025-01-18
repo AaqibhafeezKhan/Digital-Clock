@@ -1,0 +1,164 @@
+        :root {
+            --primary-bg: #1a1a1a;
+            --clock-bg: #000000;
+            --text-color: #00ff00;
+            --control-bg: #2a2a2a;
+            --hover-color: #404040;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background: linear-gradient(135deg, #1a1a1a, #4a4a4a);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .container {
+            background: var(--primary-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+            width: 90%;
+        }
+
+        .clock-display {
+            background: var(--clock-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .time {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4rem;
+            color: var(--text-color);
+            text-shadow: 0 0 10px var(--text-color);
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .date {
+            font-size: 1.5rem;
+            color: #888;
+            margin-bottom: 1rem;
+        }
+
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .control-group {
+            background: var(--control-bg);
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+        .control-group h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            color: #fff;
+        }
+
+        button {
+            background: var(--text-color);
+            color: #000;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0.25rem;
+        }
+
+        button:hover {
+            background: var(--hover-color);
+            color: var(--text-color);
+        }
+
+        select, input {
+            background: #333;
+            color: #fff;
+            border: 1px solid #555;
+            padding: 0.5rem;
+            border-radius: 5px;
+            margin: 0.25rem;
+            width: calc(100% - 0.5rem);
+        }
+
+        .alarm-list {
+            margin-top: 1rem;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .alarm-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem;
+            background: #333;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+        }
+
+        .fullscreen {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .time {
+                font-size: 3rem;
+            }
+
+            .controls {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .dark-mode {
+            --primary-bg: #ffffff;
+            --clock-bg: #f0f0f0;
+            --text-color: #00aa00;
+            --control-bg: #e0e0e0;
+            --hover-color: #d0d0d0;
+        }
+
+        .timezone-select {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .stopwatch {
+            font-size: 2rem;
+            margin: 1rem 0;
+        }
+
+        .timer {
+            font-size: 2rem;
+            margin: 1rem 0;
+        }
